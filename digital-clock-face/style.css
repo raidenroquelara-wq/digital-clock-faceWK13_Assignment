@@ -1,0 +1,200 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    text-align: center;
+    font-size: 10px;
+}
+
+body{
+    margin: 0;
+    font-size: 2rem;
+    display: flex;
+    flex: 1;
+    min-height: 100vh;
+    align-items: center;
+    background: linear-gradient(
+        rgba(8, 18, 28, 0.55),
+        rgba(8, 18, 28, 0.55)
+    ),url(../Image/Blue-Sky.jpg) center center / cover no-repeat fixed;
+    justify-content:center;
+    color: white;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 20px;
+
+}
+
+.clock {
+    width: 30rem;
+    height: 30rem;
+    border: 8px solid rgba(112, 214, 255, 0.55);
+    border-radius: 50%;
+    margin: 50px auto;
+    padding: 1.5rem;
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.04),
+        0 0 18px rgba(112, 214, 255, 0.2);
+    background: #172128;
+}
+.clock-face {
+ position: relative;
+ width: 100%;
+ height: 100%;
+ transform: translateY(-3px);
+}    
+
+.hand {
+    width: 50%;
+    height: 6px;
+    background: rgb(70, 170, 210);
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.5s;
+    transition-timing-function:cubic-bezier(0.7, 2.7, 0.58, 1 ) ;
+    box-shadow: 3px 3px 3px 3px rgba(100,100,100,0.3);
+}
+
+.hourhand {
+    width: 30%;
+    right: 50%;
+}
+
+.secondhand{
+     background-color: rgb(162, 0, 255);
+}
+
+.button{
+    width: 10%;
+    height: 10%;
+    position: absolute;
+    top: 46%;
+    left: 46%;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 3px 3px 3px 3px rgba(100, 100, 100, 0.3);
+}
+
+.digital-clock {
+    font-family: 'Digital-7', sans-serif;
+    font-size: 10rem;
+    color: white;
+    width: 400px;
+}
+
+
+.time {
+    padding-right: 20px;
+    text-shadow: 2px 2px 2px black;
+}
+
+.number {
+    position: absolute;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.number-12 { top: 15%; left: 50%; }
+.number-1  { top: 20%; left: 70%; }
+.number-2  { top: 30%; left: 80%; }
+.number-3  { top: 50%; left: 85%; }
+.number-4  { top: 70%; left: 80%; }
+.number-5  { top: 80%; left: 70%; }
+.number-6  { top: 85%; left: 50%; }
+.number-7  { top: 80%; left: 30%; }
+.number-8  { top: 70%; left: 20%; }
+.number-9  { top: 50%; left: 15%; }
+.number-10 { top: 30%; left: 20%; }
+.number-11 { top: 20%; left: 30%; }
+
+.markers {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.marker {
+    position: absolute;
+    width: 2px;
+    height: 8px;
+    background: #70d6ff;
+    border-radius: 2px;
+}
+
+.marker.hour-marker {
+    width: 4px;
+    height: 14px;
+    background: white;
+}
+
+.markers {
+    z-index: 1;
+}
+
+.hand {
+    z-index: 3;
+}
+
+.button {
+    z-index: 4;
+}
+
+.clock-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 30px 40px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 700px) {
+    .clock {
+        width: 25rem;
+        height: 25rem;}
+
+        .digital-clock {
+        font-size: 6rem;
+        width: 100%;
+    }
+
+    }
+
+    @media (max-width: 750px) {
+    .clock-panel {
+        flex-direction: column;
+        gap: 15px;
+        padding: 25px;
+    }
+
+    .digital-clock {
+        font-size: 7rem;
+        width: 100%;
+    }
+
+    .clock {
+        margin: 0 auto;
+    }
+}
+
+@font-face {
+    font-family: 'Digital-7';
+    src: url('../Fonts/digital-7.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
